@@ -1,0 +1,30 @@
+<!-- modal page view after clicking on post button -->
+ 
+<div class="container">
+ <div class="modal fade" id="postContainer">
+ <div class="col-sm-8">
+  <div class="modal-content">
+   <div class="modal-body"> 
+     <div class="well" style="text-align:center">
+       <h3> whats on your mind ? </h3>
+     </div> 
+     <form method="post" action="/confession">
+        <div class="form-group">
+           <input type="text" class="form-control" id="title"  placeholder="Enter title of the story...">
+        </div>
+        <div class="form-group">
+           <textarea class="form-control" id="story" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+           <input type="text" class="form-control" id="tags"  placeholder="interested words separated by commma.">
+        </div>
+        <div class="form-group">
+         <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+   </div>
+  </div>
+  </div>
+ </div>  
+</div>

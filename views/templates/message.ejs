@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<% include header %>
+<body>
+  <style>
+    body { 
+    padding-top: 65px; 
+}
+</style>  
+	<% include navbar %>
+    <div class="container">
+      <div class="col-sm-3 well">
+       <div class="well" >
+      	<div class="row">
+      		<div class="media">
+               <div class="media-left media-top">
+                   <img src="raja.jpg" class="pull-left" style="width:60px">
+               </div>
+               <div class="media-body">
+                   <h4 class="media-heading">friend Name</h4>
+               <p>Last message of chat</p>
+              </div>
+           </div>
+        </div>
+        <!--check for example -->
+        <div class="row">
+      		<div class="media">
+               <div class="media-left media-top">
+                   <img src="raja.jpg" class="pull-left" style="width:60px">
+               </div>
+               <div class="media-body">
+                   <h4 class="media-heading">friend Name</h4>
+               <p>Last message of chat</p>
+              </div>
+           </div>
+        </div>
+        <!-- end of example --> 
+       </div>   
+      </div>
+      <!-- mid div content for displaying the chat -->
+      <div class="col-sm-7">
+        <div class="well">
+      	 <div class="col-sm-12" style="text-align:right">
+      		<h4> Username </h4>
+      		<p> active time </p>
+      		<p style="text-align:center">conversation</p>
+      	 </div>
+      	 <div class="row">
+      	    <% include messsageContent %>
+         </div>
+        </div> 
+      </div>
+     <!-- notificaition for new interest section posts and new startups ideas post -->
+    <div class="col-sm-2 well">
+     	<p>notification center for interested section and startups news.</p>
+     </div> 
+   </div>
+
+  <% include footer %>
+   
+</body> 
