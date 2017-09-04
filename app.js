@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var stylus = require('stylus');
+var request = require('request');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -44,6 +45,19 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+
+app.get('/', function(req, res, next){
+        res.render('login', {
+            title: 'Storyshell',
+        });       
+});
+app.post('/login', function(req, res, next){
+    console.log(req.body.uname);
+    console.log(req.body.pass);
+	//res.header("Access-Control-Allow-Methods",'GET');
+	return res.redirect('/');
 });
 
 module.exports = app;

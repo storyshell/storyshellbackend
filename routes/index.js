@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  res.render('login', { title: 'Express',Title: 'shashi' });
+
 });
 /* GET Profile page */
 router.get('/profile', function(req,res, next) {
@@ -29,4 +30,19 @@ router.get('/message', function(req,res,next) {
  res.render('message', { title: 'messages' });
  });
 
+ router.get('/about', function(req,res,next) {
+ res.render('about', { title: 'about' });
+ });
+
+  router.get('/slide', function(req,res,next) {
+ res.render('slide', { title: 'slide' });
+ });
+ 
+ 
+ router.post('/login', function(req, res, next){
+    console.log(req.body.uname);
+    console.log(req.body.pass);
+	//res.header("Access-Control-Allow-Methods",'GET');
+	return res.redirect('/');
+});
 module.exports = router;
