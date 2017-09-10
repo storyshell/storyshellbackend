@@ -9,6 +9,8 @@ var request = require('request');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+//var signup = require('./routes/auth');
+var activate = require('./routes/activate');
 
 var app = express();
 
@@ -27,7 +29,9 @@ app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+//app.use('/', auth);
 app.use('/users', users);
+app.use('/activation', activate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -46,18 +50,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-app.get('/', function(req, res, next){
-        res.render('login', {
-            title: 'Storyshell',
-        });       
-});
-app.post('/login', function(req, res, next){
-    console.log(req.body.uname);
-    console.log(req.body.pass);
-	//res.header("Access-Control-Allow-Methods",'GET');
-	return res.redirect('/');
-});
-
 module.exports = app;

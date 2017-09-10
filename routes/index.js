@@ -1,48 +1,76 @@
+var http = require('http');
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('login', { title: 'Express',Title: 'shashi' });
+  
 
 });
-/* GET Profile page */
-router.get('/profile', function(req,res, next) {
-  res.render('profile', { title: 'Profile' });
+
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
+router.post('/signup', urlencodedParser, function(req, response, next){
+jsonObject = JSON.stringify({
+"firstName":req.body.firstname,
+"lastName":req.body.lastname,
+"password":req.body.password,
+"mobileNumber":req.body.mobno,
+"email":req.body.email
+
 });
+ 
+// prepare the header
+var postheaders = {
+    'Content-Type' : 'application/json',
+    'Content-Length' : Buffer.byteLength(jsonObject, 'utf8')
+};
+ 
+// the post options
+var optionspost = {
+    host : 'localhost',
+    port : 8080,
+    path : '/oauth/v1/create/user',
+    method : 'POST',
+    headers : postheaders
+};
+ 
+console.info('Options prepared:');
+console.info(optionspost);
+console.info('Do the POST call');
+ 
+// do the POST call
+var reqPost = http.request(optionspost, function(res) {
+    console.log("statusCode: ", res.statusCode);
+    // uncomment it for header details
+//  console.log("headers: ", res.headers);
+ 
+    res.on('data', function(d) {
+		response.render('welcome');
+    });
+});
+ 
+// write the json data
+reqPost.write(jsonObject);
+reqPost.end();
+reqPost.on('error', function(e) {
+    console.error(e);
+});
+ 	
+});
+
 /* GET StoryShell page */
-router.get('/storyshell', function(req,res,next) {
- res.render('storyshell', { title: 'storyshell' });
- });
-
-/* GET confession page */
-router.get('/confession', function(req,res,next) {
- res.render('confession', { title: 'confession' });
- });
-
-/* GET feed pages */
-router.get('/feed', function(req,res,next) {
- res.render('index', { title: 'feed' });
- });
-
-/* GET message page */
-router.get('/message', function(req,res,next) {
- res.render('message', { title: 'messages' });
- });
-
- router.get('/about', function(req,res,next) {
- res.render('about', { title: 'about' });
- });
-
-  router.get('/slide', function(req,res,next) {
- res.render('slide', { title: 'slide' });
+router.get('/welcome', function(req,res,next) {
+ res.render('welcome');
  });
  
+
+
  
- router.post('/login', function(req, res, next){
-    console.log(req.body.uname);
-    console.log(req.body.pass);
-	//res.header("Access-Control-Allow-Methods",'GET');
-	return res.redirect('/');
-});
+
 module.exports = router;
+
