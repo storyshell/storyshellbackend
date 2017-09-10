@@ -1,73 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-<% include header %>
-<body>  
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <div class="container">
-            <h1 style="text-align:center">Story Book</h1>
-            <p>Book of lifetime journey.create news and discuss on favourite topic and 
-            share video and movies or pics of categorywise so that it could be easy for someone to notify 
-            the interested category people all around the world. You can also create confession for some one and set date to notify according
-            to your choiced group of people. we will take care of your confession because it is your own feeling for someone. 
-            you can also create the story of your daily life in more fashionable way so that it will be very easy to look in future days with very specific topic.</p>
-            <p>
-                <a class="btn btn-primary btn-lg" role="button">Learn more
-                    &raquo;</a>
-            </p>
-        </div>
-    </div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/login.css">
 
-    <div class="container">
-         <div class="row">
-                            <div class="col-md-12">
-                                Login via
-                                <div class="social-buttons">
-                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                </div>
-                                or
-                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                             <label class="sr-only" for="email-number">Email address</label>
-                                             <input type="email" class="form-control" id="email-number" placeholder="Enter Email address or Phone Number" required>
-                                        </div>
-                                        <div class="form-group">
-                                             <label class="sr-only" for="password">Password</label>
-                                             <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                        </div>
-                                        <div class="form-group">
-                                             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                        </div>
-                                        <div class="checkbox">
-                                             <label>
-                                             <input type="checkbox"> keep me logged-in
-                                             </label>
-                                        </div>
-                                 </form>
-                            </div>
-                            <div class="bottom text-center">
-                                <!-- Trigger the modal with a button -->
-                                New here ? <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signupModal">Join Us</button>
-                                <% include signup %>
-                                <!-- New here ? <a href="#"><b>Join Us</b></a> -->
-                            </div>
-                     </div>
-    </div>    
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    display: inline-block;
+    border: 1px solid #091a3c;;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(4, 15, 39, 0.83);
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: rgba(255, 255, 255, 0);}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+</style>
+<body>
+
+
+
+<ul class="topnav">
+  <li><a class="active" href="#home"><i>Storyshell</i></a></li>
+  <form name="login" action="/login" method="post">
+  <li class="right"> <input type="submit"  value="go"></li>
+   <li class="right"><input type="text" name="pass" size="25" placeholder="Password"></li>
+  <li class="right"><input type="text" name="uname" size="25" placeholder="Username"></li>
+  </form>
+
  
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#home').addClass("active");
-        });
-    </script>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script
-        src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</ul>
+
+  <div class="container">
+<h3 align="center">Storyshell</h3>
+
+<div>
+  <form action="/signup" method="post">
+    <input type="text" id="fname" name="firstname" placeholder="Firstname">
+    <input type="text" id="lname" name="lastname" placeholder="Lastname">
+    <input type="text" id="pass" name="password" placeholder="Password">
+    <input type="text" id="lname" name="email" placeholder="Email">
+
+    <input type="text" id="lname" name="mobno" placeholder="Mobile No">
+    <select id="sex" name="sex">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input type="submit"  value="Sign Up"/>
+  </form>
+</div>
+</div>
+
+
 </body>
 </html>
