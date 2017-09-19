@@ -2,6 +2,7 @@
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <head>
@@ -55,6 +56,114 @@
     <script
         src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
        
+=======
+<link rel="stylesheet" href="stylesheets/login.css">
+
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    display: inline-block;
+    border: 1px solid #091a3c;;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(4, 15, 39, 0.83);
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: rgba(255, 255, 255, 0);}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+</style>
+<body>
+
+
+
+<ul class="topnav">
+  <li><a class="active" href="#home"><i>Storyshell</i></a></li>
+  <form name="login" action="/login" method="post">
+  <li class="right"> <input type="submit"  value="go"></li>
+   <li class="right"><input type="text" name="pass" size="25" placeholder="Password"></li>
+  <li class="right"><input type="text" name="uname" size="25" placeholder="Username"></li>
+  </form>
+
+ 
+</ul>
+
+  <div class="container">
+<h3 align="center">Storyshell</h3>
+
+<div>
+  <form action="/signup" method="post">
+    <input type="text" id="fname" name="firstname" placeholder="Firstname">
+    <input type="text" id="lname" name="lastname" placeholder="Lastname">
+    <input type="text" id="pass" name="password" placeholder="Password">
+    <input type="text" id="lname" name="email" placeholder="Email">
+
+    <input type="text" id="lname" name="mobno" placeholder="Mobile No">
+    <select id="sex" name="sex">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <input type="submit"  value="Sign Up"/>
+  </form>
+</div>
+</div>
+
+
+>>>>>>> a6b3dc503b69ace43dc23518073f8a86e855d02f
 </body>
 <% include footer %>
 </html>
