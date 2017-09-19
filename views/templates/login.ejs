@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
 <% include header %>
+</head>
+<% include navbar %>
 <body>  
     <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
     <div class="jumbotron">
         <div class="container">
+
+
             <h1 style="text-align:center">Story Book</h1>
             <p>Book of lifetime journey.create news and discuss on favourite topic and 
             share video and movies or pics of categorywise so that it could be easy for someone to notify 
@@ -20,33 +31,7 @@
 
     <div class="container">
          <div class="row">
-                            <div class="col-md-12">
-                                Login via
-                                <div class="social-buttons">
-                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-                                    <a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
-                                </div>
-                                or
-                                 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                             <label class="sr-only" for="email-number">Email address</label>
-                                             <input type="email" class="form-control" id="email-number" placeholder="Enter Email address or Phone Number" required>
-                                        </div>
-                                        <div class="form-group">
-                                             <label class="sr-only" for="password">Password</label>
-                                             <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
-                                        </div>
-                                        <div class="form-group">
-                                             <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-                                        </div>
-                                        <div class="checkbox">
-                                             <label>
-                                             <input type="checkbox"> keep me logged-in
-                                             </label>
-                                        </div>
-                                 </form>
-                            </div>
+
                             <div class="bottom text-center">
                                 <!-- Trigger the modal with a button -->
                                 New here ? <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signupModal">Join Us</button>
@@ -69,5 +54,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script
         src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+       
 </body>
+<% include footer %>
 </html>
