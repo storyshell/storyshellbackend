@@ -15,6 +15,15 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+input[type=password], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    display: inline-block;
+    border: 1px solid #091a3c;;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -65,9 +74,9 @@ ul.topnav li a:hover:not(.active) {background-color: #111;}
 
 ul.topnav li a.active {background-color: rgba(255, 255, 255, 0);}
 
-ul.topnav li.right {float: right;}
+ul.topnav form.right {float: right;}
 
-@media screen and (max-width: 600px){
+@media screen and (max-width:device-width){
     ul.topnav li.right, 
     ul.topnav li {float: none;}
 }
@@ -78,13 +87,11 @@ ul.topnav li.right {float: right;}
 
 <ul class="topnav">
   <li><a class="active" href="#home"><i>Storyshell</i></a></li>
-  <form name="login" action="/login" method="post">
-  <li class="right"> <input type="submit"  value="go"></li>
-   <li class="right"><input type="text" name="pass" size="25" placeholder="Password"></li>
-  <li class="right"><input type="text" name="uname" size="25" placeholder="Username"></li>
+  <form class="right" name="login" action="/login" method="post">
+   <li ><input type="text" name="uname" size="25" placeholder="Username"></li>
+   <li ><input type="text" name="pass" size="25" placeholder="Password"></li>
+   <li > <input type="submit" value="go"></li>
   </form>
-
- 
 </ul>
 
   <div class="container">
@@ -94,7 +101,7 @@ ul.topnav li.right {float: right;}
   <form action="/signup" method="post">
     <input type="text" id="fname" name="firstname" placeholder="Firstname">
     <input type="text" id="lname" name="lastname" placeholder="Lastname">
-    <input type="text" id="pass" name="password" placeholder="Password">
+    <input type="password" id="pass" name="password" placeholder="Password">
     <input type="text" id="lname" name="email" placeholder="Email">
 
     <input type="text" id="lname" name="mobno" placeholder="Mobile No">
