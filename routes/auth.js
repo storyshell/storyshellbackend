@@ -5,14 +5,15 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express',Title: 'shashi' });
-});
+//router.get('/', function(req, res, next) {
+//  res.render('login', { title: 'Express',Title: 'shashi' });
 
-var jsonParser = bodyParser.json();
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+//});
 
-router.post('/signup', urlencodedParser, function(req, response, next){
+var jsonParser = bodyParser.json()
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+router.post('/', urlencodedParser, function(req, res, next){
 jsonObject = JSON.stringify({
 "firstName":req.body.firstname,
 "lastName":req.body.lastname,
@@ -37,7 +38,10 @@ var optionspost = {
     headers : postheaders
 };
  
-
+console.info('Options prepared:');
+console.info(optionspost);
+console.info('Do the POST call');
+ 
 // do the POST call
 var reqPost = http.request(optionspost, function(res) {
     console.log("statusCode: ", res.statusCode);
@@ -45,7 +49,9 @@ var reqPost = http.request(optionspost, function(res) {
 //  console.log("headers: ", res.headers);
  
     res.on('data', function(d) {
-		response.render('welcome',{'data':d});
+        console.info('POST result:\n');
+        process.stdout.write(d);
+        console.info('\n\nPOST completed');
     });
 });
  
@@ -54,10 +60,11 @@ reqPost.write(jsonObject);
 reqPost.end();
 reqPost.on('error', function(e) {
     console.error(e);
- });
- 	
 });
+ 
 
+	return res.redirect('/welcome');
+});
 
 module.exports = router;
 

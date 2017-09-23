@@ -3,23 +3,26 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var router = express.Router();
 
+var jsonParser = bodyParser.json();
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Express',Title: 'shashi' });
-});
+
+
+router.get('/:id', function(req,response) {
+ var token = req.params.id;
+ 
+/*  //response.render('activateresponse',{'data':token});
+//});
+
+
+
 
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-router.post('/signup', urlencodedParser, function(req, response, next){
+//router.post('/signup', urlencodedParser, function(req, response, next){
 jsonObject = JSON.stringify({
-"firstName":req.body.firstname,
-"lastName":req.body.lastname,
-"password":req.body.password,
-"mobileNumber":req.body.mobno,
-"email":req.body.email
-
+"token":token
 });
  
 // prepare the header
@@ -32,8 +35,8 @@ var postheaders = {
 var optionspost = {
     host : 'localhost',
     port : 8080,
-    path : '/oauth/v1/create/user',
-    method : 'POST',
+    path : '/oauth/v1/create/account-activation/token',
+    method : 'GET',
     headers : postheaders
 };
  
@@ -45,7 +48,7 @@ var reqPost = http.request(optionspost, function(res) {
 //  console.log("headers: ", res.headers);
  
     res.on('data', function(d) {
-		response.render('welcome',{'data':d});
+		response.render('loginwelcome');
     });
 });
  
@@ -55,9 +58,8 @@ reqPost.end();
 reqPost.on('error', function(e) {
     console.error(e);
  });
- 	
+ */
+ response.render('loginwelcome'); 
 });
 
-
 module.exports = router;
-

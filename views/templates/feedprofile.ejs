@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/feedprofile.css">
+<script src="jq/jquery-3.2.1.js"></script>
+<script src="jq/jquery.textfill.min.js"></script>
+
+	<body>
+		<div class="w3-card-4 center">
+
+	
+
+		<div class="w3-bar">
+		 <button class="w3-bar-item w3-button w3-round" onclick="openCity('Create Story')"><mid><B>Create Story</B></mid></button>
+		 <button class="w3-bar-item w3-button w3-round" onclick="openCity('Your Stories')"><mid><B>Your Stories</B></mid></button>
+		 <button class="w3-bar-item w3-button w3-round" onclick="openCity('Live Video')"><mid><B>Live Video</B></mid></button>
+		</div>
+        
+        <hr>
+
+		<div id="Create Story" class="w3-container city">
+		  <div class="w3-row">
+		   <div class="w3-col s2" ><img src="img/img_avatar3.png" alt="Avatar" class="w3-left w3-round" style="width:50px;"></div>
+		   <div class="w3-col s10">
+		   
+		   	 <input class="w3-input w3-border" type="text" style="height: 50px;" placeholder="Let's start Your Story ..">
+		   </div>
+		  </div>
+		</div>
+
+		<div id="Your Stories" class="w3-container city" style="display:none">
+		  <h2>Paris</h2>
+		  <p>Paris is the capital of France.</p> 
+		</div>
+
+		<div id="Live Video" class="w3-container city" style="display:none">
+		  <h2>Tokyo</h2>
+		  <p>Tokyo is the capital of Japan.</p>
+		</div>
+
+		<script>
+		function openCity(cityName) {
+		    var i;
+		    var x = document.getElementsByClassName("city");
+		    for (i = 0; i < x.length; i++) {
+		       x[i].style.display = "none";  
+		    }
+		    document.getElementById(cityName).style.display = "block";  
+		}
+		</script>
+
+		<hr>
+		    <div class="w3-button w3-light-grey w3-round" style="width:35% height:15%;margin-left: 5px;">
+      			<mid><B>Photo/videos</B></mid>
+    		</div>
+
+		    <div class="w3-button w3-light-grey w3-round" style="width:35% height:15%;margin-left: 5px;">
+      			<mid><B>Feelings/Activity</B></mid>
+    		</div>
+	    </div>
+
+	</body>
+</html>

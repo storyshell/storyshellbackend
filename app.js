@@ -7,16 +7,21 @@ var bodyParser = require('body-parser');
 var stylus = require('stylus');
 var request = require('request');
 
+var app = express();
+
 var index = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
+var about = require('./routes/about');
 //var signup = require('./routes/auth');
 var activate = require('./routes/activate');
+var forgetpass = require('./routes/forgetpass');
+var chat = require('./routes/chat');
+var feed = require('./routes/feed');
+var feedprofile = require('./routes/feedprofile');
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views/templates'));
-//app.set('view engine', 'jade');
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
@@ -28,10 +33,17 @@ app.use(cookieParser());
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', index);
+//app.use('/users', users);
+app.use('/', about);
+app.use('/', chat);
+app.use('/', feed);
+app.use('/', feedprofile);
 //app.use('/', auth);
-app.use('/users', users);
+
 app.use('/activation', activate);
+app.use('/', forgetpass);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,6 +2,61 @@
 <html lang="en">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head>
+<% include header %>
+</head>
+<% include navbar %>
+<body>  
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+
+    <div class="jumbotron">
+        <div class="container">
+
+
+            <h1 style="text-align:center">Story Book</h1>
+            <p>Book of lifetime journey.create news and discuss on favourite topic and 
+            share video and movies or pics of categorywise so that it could be easy for someone to notify 
+            the interested category people all around the world. You can also create confession for some one and set date to notify according
+            to your choiced group of people. we will take care of your confession because it is your own feeling for someone. 
+            you can also create the story of your daily life in more fashionable way so that it will be very easy to look in future days with very specific topic.</p>
+            <p>
+                <a class="btn btn-primary btn-lg" role="button">Learn more
+                    &raquo;</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+         <div class="row">
+
+                            <div class="bottom text-center">
+                                <!-- Trigger the modal with a button -->
+                                New here ? <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#signupModal">Join Us</button>
+                                <% include signup %>
+                                <!-- New here ? <a href="#"><b>Join Us</b></a> -->
+                            </div>
+                     </div>
+    </div>    
+ 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#home').addClass("active");
+        });
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+        src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+       
+=======
 <link rel="stylesheet" href="stylesheets/login.css">
 
 <style>
@@ -15,6 +70,15 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+input[type=password], select {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 4px 4px 4px 4px ;
+    display: inline-block;
+    border: 1px solid #091a3c;;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 input[type=submit] {
     width: 100%;
     background-color: #4CAF50;
@@ -65,9 +129,9 @@ ul.topnav li a:hover:not(.active) {background-color: #111;}
 
 ul.topnav li a.active {background-color: rgba(255, 255, 255, 0);}
 
-ul.topnav li.right {float: right;}
+ul.topnav form.right {float: right;}
 
-@media screen and (max-width: 600px){
+@media screen and (max-width:device-width){
     ul.topnav li.right, 
     ul.topnav li {float: none;}
 }
@@ -78,13 +142,11 @@ ul.topnav li.right {float: right;}
 
 <ul class="topnav">
   <li><a class="active" href="#home"><i>Storyshell</i></a></li>
-  <form name="login" action="/login" method="post">
-  <li class="right"> <input type="submit"  value="go"></li>
-   <li class="right"><input type="text" name="pass" size="25" placeholder="Password"></li>
-  <li class="right"><input type="text" name="uname" size="25" placeholder="Username"></li>
+  <form class="right" name="login" action="/login" method="post">
+   <li ><input type="text" name="uname" size="25" placeholder="Username"></li>
+   <li ><input type="text" name="pass" size="25" placeholder="Password"></li>
+   <li > <input type="submit" value="go"></li>
   </form>
-
- 
 </ul>
 
   <div class="container">
@@ -94,7 +156,7 @@ ul.topnav li.right {float: right;}
   <form action="/signup" method="post">
     <input type="text" id="fname" name="firstname" placeholder="Firstname">
     <input type="text" id="lname" name="lastname" placeholder="Lastname">
-    <input type="text" id="pass" name="password" placeholder="Password">
+    <input type="password" id="pass" name="password" placeholder="Password">
     <input type="text" id="lname" name="email" placeholder="Email">
 
     <input type="text" id="lname" name="mobno" placeholder="Mobile No">
@@ -108,5 +170,7 @@ ul.topnav li.right {float: right;}
 </div>
 
 
+>>>>>>> a6b3dc503b69ace43dc23518073f8a86e855d02f
 </body>
+<% include footer %>
 </html>

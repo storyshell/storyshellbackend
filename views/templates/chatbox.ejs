@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheets/chat.css">
+
+<script type="text/javascript">
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+  var time = date.getTime();
+
+  return  day + ' ' + monthNames[monthIndex] ;
+}
+</script>
+<body>
+
+
+<div class="right-bottom">
+  <div class="w3-card-4">
+        <header class="w3-container w3-light-blue">
+            <h6>John Doe </h6>
+        </header>
+    <div class="w3-card-3" style="overflow: auto;">
+
+
+        <div class="w3-row">
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-left w3-circle " style="width:20px"></div>
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is my msg ihiuhuiguygug  u g tftyg fg tytf   tyft tyf  tf  tf  ytf tftyf fyty ytyf ytf tftyyftyftyfyt</div>
+        </div>
+        <br/>
+        <div class="w3-row">
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is yours msg</div>
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-right w3-circle " style="width:20px"></div>
+        </div>
+        <div class="w3-row w3-center">
+             <small id="demo">
+                <script>
+                   document.getElementById("demo").innerHTML =formatDate(new Date());   
+                </script>
+             </small>
+         </div>
+
+       <div class="w3-row">
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-left w3-circle " style="width:20px"></div>
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is my msg ihiuhuftyftfctftftdtrdrrsriguygug  u g tftyg fg tytf   tyft tyf  tf  tf  ytf tftyf fyty ytyf ytf tftyyftyftyfyt</div>
+        </div>
+        <br/>
+        <div class="w3-row">
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is yours msg hgvghcctrfdtrdrrd</div>
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-right w3-circle " style="width:20px"></div>
+        </div>
+
+
+       <div class="w3-row">
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-left w3-circle " style="width:20px"></div>
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is my ghugygytftyf tftyf rtd@xctfdrmsg ihiuhuiguygug  u g tftyg fg tytf   tyft tyf  tf  tf  ytf tftyf fyty ytyf ytf tftyyftyftyfyt</div>
+        </div>
+        <br/>
+        <div class="w3-row">
+           <div class="w3-col s11 w3-round w3-light-grey w3-left">this is yours msg bbbbbbbbbbbftf5155vgfgfg</div>
+           <div class="w3-col s1 w3-center" > <img src="img/img_avatar3.png" alt="Avatar" class="w3-right w3-circle " style="width:20px"></div>
+        </div>
+
+
+    </div>
+        <hr>
+        <input class="w3-input w3-border  left-bottom" type="text" placeholder="Type message here ..">
+        <button class="w3-button w3-blue w3-round right-bottom">send</button>
+
+  </div>
+</div>
+</body>
+</html>
