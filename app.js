@@ -9,7 +9,8 @@ var request = require('request');
 
 var app = express();
 
-var index = require('./routes/index');
+//setting the urls for routing
+//var index = require('./routes/index');
 //var users = require('./routes/users');
 var about = require('./routes/about');
 //var signup = require('./routes/auth');
@@ -18,6 +19,9 @@ var forgetpass = require('./routes/forgetpass');
 var chat = require('./routes/chat');
 var feed = require('./routes/feed');
 var feedprofile = require('./routes/feedprofile');
+var storyshelldummy = require('./routes/storyselldummy');
+var headerdummy = require('./routes/headerdummy');
+
 
 
 // view engine setup
@@ -34,12 +38,14 @@ app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', index);
+//app.use('/', index);
 //app.use('/users', users);
-app.use('/', about);
-app.use('/', chat);
-app.use('/', feed);
+//app.use('/', about);
+//app.use('/', chat);
+app.use('/feed', feed);
 app.use('/', feedprofile);
+app.use('/', headerdummy);
+app.use('/storyshelldummy', storyshelldummy);
 //app.use('/', auth);
 
 app.use('/activation', activate);
