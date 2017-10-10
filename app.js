@@ -18,6 +18,7 @@ var forgetpass = require('./routes/forgetpass');
 var chat = require('./routes/chat');
 var feed = require('./routes/feed');
 var feedprofile = require('./routes/feedprofile');
+var profile = require('./routes/profile');
 
 
 // view engine setup
@@ -40,6 +41,7 @@ app.use('/', about);
 app.use('/', chat);
 app.use('/', feed);
 app.use('/', feedprofile);
+app.use('/', profile);
 //app.use('/', auth);
 
 app.use('/activation', activate);
